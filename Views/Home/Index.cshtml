@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <div id="header-container">
+        <h1 id="attendance-header">ATTENDANCE RECORD</h1>
+    </div>
+    <div id="attendance-manager-container">
+        @for (int i = 0; i < 15; i++)
+        {
+
+            <div class="employee-card">
+                <span>
+                    <div>@($"Employee{i+1}") Name</div>
+                    <div>@($"Employee{i+1}") Role</div>
+                </span>
+                <span>
+                    @for (int j = 0; j < 6; j++)
+                    {
+                        <span class="attendance-marker"></span>
+                    }
+                </span>
+            </div>
+        }
+    </div>
+</div>
