@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/Evangelist_CRUD_WEB_APP.props" />
-</Project>
