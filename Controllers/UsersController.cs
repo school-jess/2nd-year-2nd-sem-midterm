@@ -9,23 +9,23 @@ using Evangelist_CRUD_WEB_APP;
 
 namespace Evangelist_CRUD_WEB_APP.Controllers
 {
-    public class ApplicationController : Controller
+    public class UsersController : Controller
     {
         private readonly DatabaseCtx _context;
 
-        public ApplicationController(DatabaseCtx context)
+        public UsersController(DatabaseCtx context)
         {
             _context = context;
         }
 
-        // GET: Application
+        // GET: Users
         public async Task<IActionResult> Index()
         {
             var databaseCtx = _context.Users.Include(a => a.Shift);
             return View(await databaseCtx.ToListAsync());
         }
 
-        // GET: Application/Details/5
+        // GET: Users/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -44,14 +44,14 @@ namespace Evangelist_CRUD_WEB_APP.Controllers
             return View(applicationUser);
         }
 
-        // GET: Application/Create
+        // GET: Users/Create
         public IActionResult Create()
         {
             ViewData["ShiftId"] = new SelectList(_context.Shifts, "Id", "Id");
             return View();
         }
 
-        // POST: Application/Create
+        // POST: Users/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -68,7 +68,7 @@ namespace Evangelist_CRUD_WEB_APP.Controllers
             return View(applicationUser);
         }
 
-        // GET: Application/Edit/5
+        // GET: Users/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -85,7 +85,7 @@ namespace Evangelist_CRUD_WEB_APP.Controllers
             return View(applicationUser);
         }
 
-        // POST: Application/Edit/5
+        // POST: Users/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -121,7 +121,7 @@ namespace Evangelist_CRUD_WEB_APP.Controllers
             return View(applicationUser);
         }
 
-        // GET: Application/Delete/5
+        // GET: Users/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -140,7 +140,7 @@ namespace Evangelist_CRUD_WEB_APP.Controllers
             return View(applicationUser);
         }
 
-        // POST: Application/Delete/5
+        // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
