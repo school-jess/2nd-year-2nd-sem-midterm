@@ -11,14 +11,14 @@
         {
 
             <div class="employee-card">
-                <span>
-                    <div>@($"Employee{i+1}") Name</div>
-                    <div>@($"Employee{i+1}") Role</div>
+                <span class="attendance-detail-container employee-card-reset">
+                    <div class="attendance-detail employee-card-reset">@($"Employee{i+1}") Name</div>
+                    <div class="attendance-detail employee-card-reset">@($"Employee{i+1}") Role</div>
                 </span>
-                <span>
+                <span class="attendance-marker-container employee-card-reset">
                     @for (int j = 0; j < 6; j++)
                     {
-                        <span class="attendance-marker"></span>
+                        <span class="attendance-marker employee-card-reset"></span>
                     }
                 </span>
             </div>
